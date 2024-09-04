@@ -22,6 +22,8 @@
 		0C6F36F72C890104006F5E83 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F36F62C890104006F5E83 /* MainCoordinator.swift */; };
 		0C6F36FC2C890E85006F5E83 /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F36FB2C890E85006F5E83 /* ViewCode.swift */; };
 		0C6F36FE2C890F00006F5E83 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F36FD2C890F00006F5E83 /* MainView.swift */; };
+		0C6F370A2C8923ED006F5E83 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F37092C8923ED006F5E83 /* MainViewModel.swift */; };
+		0C6F370C2C892746006F5E83 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F370B2C892746006F5E83 /* HomeViewController.swift */; };
 		211355B8F527FEC7276640C2 /* Pods_DigioStore_DigioStoreUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00301AB4900144FB935AA9C2 /* Pods_DigioStore_DigioStoreUITests.framework */; };
 		B6CC14514C7EFBD69448C4FF /* Pods_DigioStoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9647F5B2E4836E7819031FF /* Pods_DigioStoreTests.framework */; };
 		BDD2AA29F7C7D67E224CC23C /* Pods_DigioStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32C3C31D97DD70EF1013DD71 /* Pods_DigioStore.framework */; };
@@ -64,6 +66,8 @@
 		0C6F36F62C890104006F5E83 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		0C6F36FB2C890E85006F5E83 /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
 		0C6F36FD2C890F00006F5E83 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		0C6F37092C8923ED006F5E83 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		0C6F370B2C892746006F5E83 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		32C3C31D97DD70EF1013DD71 /* Pods_DigioStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigioStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44C039F3F4CA2ADA3F309CC1 /* Pods-DigioStoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigioStoreTests.debug.xcconfig"; path = "Target Support Files/Pods-DigioStoreTests/Pods-DigioStoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8D8BDEB0A57CC8B4EBF260C2 /* Pods-DigioStore-DigioStoreUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigioStore-DigioStoreUITests.release.xcconfig"; path = "Target Support Files/Pods-DigioStore-DigioStoreUITests/Pods-DigioStore-DigioStoreUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -176,6 +180,7 @@
 		0C6F36E12C88FECD006F5E83 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				0C6F37082C8923E3006F5E83 /* ViewModel */,
 				0C6F36F92C890111006F5E83 /* View */,
 				0C6F36F82C89010B006F5E83 /* ViewController */,
 				0C6F36F52C8900F7006F5E83 /* Coordinator */,
@@ -187,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				0C6F36FF2C8912D7006F5E83 /* View */,
+				0C6F370B2C892746006F5E83 /* HomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -262,6 +268,14 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		0C6F37082C8923E3006F5E83 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0C6F37092C8923ED006F5E83 /* MainViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		52E80966F0BD69D209F81C8B /* Frameworks */ = {
@@ -518,6 +532,8 @@
 				0C6F36B02C884E2B006F5E83 /* AppDelegate.swift in Sources */,
 				0C6F36EC2C88FF91006F5E83 /* CashItem.swift in Sources */,
 				0C6F36F42C8900DC006F5E83 /* Coordinator.swift in Sources */,
+				0C6F370C2C892746006F5E83 /* HomeViewController.swift in Sources */,
+				0C6F370A2C8923ED006F5E83 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
