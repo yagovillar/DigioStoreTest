@@ -14,11 +14,12 @@ class NetworkManager {
     private init() {}
     
     func fetchDigioStoreData(completion: @escaping (Result<DigioStore, Error>) -> Void) {
-        guard let url = URL(string: "https://7hgi9vtkdc.execute-api.sa-east-1.amazonaws.com/sandbox/products") else {
+    guard let storeUrl = URL(string: "https://7hgi9vtkdc.execute-api.sa-east-1.amazonaws.com/sandbox/products") 
+        else {
             return
         }
         
-        URLSession.shared.dataTask(with: url) { data, response, error in
+        URLSession.shared.dataTask(with: storeUrl) { data, response, error in
             if let error = error {
                 completion(.failure(error))
                 return
