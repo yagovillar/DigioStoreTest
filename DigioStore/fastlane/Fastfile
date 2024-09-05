@@ -16,18 +16,8 @@
 default_platform(:ios)
 
 platform :ios do
-  desc "Description of what the lane does"
-  lane :custom_lane do
-    appium
-    appledoc	
+  desc "Generate new localized screenshots"
+  lane :screenshots do
+    capture_screenshots(workspace: "DigioStore.xcworkspace", scheme: "DigioStore")
   end
-
-lane :capture_screenshots do
-  capture_screenshots(
-    scheme: "YourAppScheme", # Nome do seu esquema Xcode
-    devices: ["iPhone 15 Pro", "iPhone 11"], # Dispositivos para capturar
-    languages: ["pt-BR"] # Idiomas para capturar
-  )
 end
-end
-
