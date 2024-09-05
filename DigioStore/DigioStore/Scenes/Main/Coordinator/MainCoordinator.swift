@@ -26,20 +26,15 @@ class MainCoordinator: Coordinator {
         let viewController = MainViewController(viewModel: MainViewModel(delegate: self))
         navigationController.pushViewController(viewController, animated: false)
     }
-    
 
 }
 
 extension MainCoordinator: MainCoordinatorProtocol {
-    private func getHomeViewController() -> HomeViewController {
-        return HomeViewController()
-    }
-    
     func goToHome() {
-        let viewController = self.getHomeViewController()
-        self.navigationController.pushViewController(viewController, animated: true)
+            let coordinator = HomeCoordinator(navigationController: navigationController)
+            coordinator.start()
+        }
     }
-}
 
 extension MainCoordinator: MainCoordinatorFlowDelegate {
     func goToHomeScreen() {
