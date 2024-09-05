@@ -30,9 +30,9 @@
 		0C6F37192C893C5E006F5E83 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F37182C893C5E006F5E83 /* UIImageView+Extensions.swift */; };
 		0C6F371F2C894792006F5E83 /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F371E2C894792006F5E83 /* UINavigationController+Extensions.swift */; };
 		0C6F37212C894893006F5E83 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F37202C894893006F5E83 /* HomeCoordinator.swift */; };
-		0C6F37242C895BFD006F5E83 /* ErrorCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F37232C895BFD006F5E83 /* ErrorCardView.swift */; };
-		0C6F37272C89606A006F5E83 /* ErrorCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F37262C89606A006F5E83 /* ErrorCard.swift */; };
 		0C6F372A2C8963D3006F5E83 /* DigioStoreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F37292C8963D3006F5E83 /* DigioStoreCollectionViewCell.swift */; };
+		0C6F372E2C8995DF006F5E83 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F372D2C8995DF006F5E83 /* UIView+Extensions.swift */; };
+		0C6F37302C8995F3006F5E83 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F372F2C8995F3006F5E83 /* UIViewController+Extensions.swift */; };
 		211355B8F527FEC7276640C2 /* Pods_DigioStore_DigioStoreUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00301AB4900144FB935AA9C2 /* Pods_DigioStore_DigioStoreUITests.framework */; };
 		B6CC14514C7EFBD69448C4FF /* Pods_DigioStoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9647F5B2E4836E7819031FF /* Pods_DigioStoreTests.framework */; };
 		BDD2AA29F7C7D67E224CC23C /* Pods_DigioStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32C3C31D97DD70EF1013DD71 /* Pods_DigioStore.framework */; };
@@ -83,9 +83,9 @@
 		0C6F37182C893C5E006F5E83 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		0C6F371E2C894792006F5E83 /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
 		0C6F37202C894893006F5E83 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
-		0C6F37232C895BFD006F5E83 /* ErrorCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCardView.swift; sourceTree = "<group>"; };
-		0C6F37262C89606A006F5E83 /* ErrorCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCard.swift; sourceTree = "<group>"; };
 		0C6F37292C8963D3006F5E83 /* DigioStoreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigioStoreCollectionViewCell.swift; sourceTree = "<group>"; };
+		0C6F372D2C8995DF006F5E83 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		0C6F372F2C8995F3006F5E83 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		32C3C31D97DD70EF1013DD71 /* Pods_DigioStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigioStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44C039F3F4CA2ADA3F309CC1 /* Pods-DigioStoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigioStoreTests.debug.xcconfig"; path = "Target Support Files/Pods-DigioStoreTests/Pods-DigioStoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8D8BDEB0A57CC8B4EBF260C2 /* Pods-DigioStore-DigioStoreUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigioStore-DigioStoreUITests.release.xcconfig"; path = "Target Support Files/Pods-DigioStore-DigioStoreUITests/Pods-DigioStore-DigioStoreUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -187,7 +187,6 @@
 			isa = PBXGroup;
 			children = (
 				0C6F37222C895BEF006F5E83 /* Components */,
-				0C6F371B2C8943EC006F5E83 /* Navigation */,
 				0C6F36F22C8900CB006F5E83 /* Protocols */,
 				0C6F36E62C88FF2D006F5E83 /* Models */,
 				0C6F36E52C88FF1E006F5E83 /* Extensions */,
@@ -239,6 +238,8 @@
 			children = (
 				0C6F37182C893C5E006F5E83 /* UIImageView+Extensions.swift */,
 				0C6F371E2C894792006F5E83 /* UINavigationController+Extensions.swift */,
+				0C6F372D2C8995DF006F5E83 /* UIView+Extensions.swift */,
+				0C6F372F2C8995F3006F5E83 /* UIViewController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -321,28 +322,11 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		0C6F371B2C8943EC006F5E83 /* Navigation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Navigation;
-			sourceTree = "<group>";
-		};
 		0C6F37222C895BEF006F5E83 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				0C6F37252C896055006F5E83 /* ErrorCard */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		0C6F37252C896055006F5E83 /* ErrorCard */ = {
-			isa = PBXGroup;
-			children = (
-				0C6F37232C895BFD006F5E83 /* ErrorCardView.swift */,
-				0C6F37262C89606A006F5E83 /* ErrorCard.swift */,
-			);
-			path = ErrorCard;
 			sourceTree = "<group>";
 		};
 		0C6F37282C89634A006F5E83 /* Coordinator */ = {
@@ -600,6 +584,7 @@
 				0C6F372A2C8963D3006F5E83 /* DigioStoreCollectionViewCell.swift in Sources */,
 				0C6F36EA2C88FF8A006F5E83 /* SpotlightItem.swift in Sources */,
 				0C6F36FC2C890E85006F5E83 /* ViewCode.swift in Sources */,
+				0C6F37302C8995F3006F5E83 /* UIViewController+Extensions.swift in Sources */,
 				0C6F36B42C884E2B006F5E83 /* MainViewController.swift in Sources */,
 				0C6F37192C893C5E006F5E83 /* UIImageView+Extensions.swift in Sources */,
 				0C6F36E82C88FF7C006F5E83 /* Product.swift in Sources */,
@@ -607,12 +592,11 @@
 				0C6F371F2C894792006F5E83 /* UINavigationController+Extensions.swift in Sources */,
 				0C6F36EF2C88FFAD006F5E83 /* NetworkManager.swift in Sources */,
 				0C6F36F12C890057006F5E83 /* DigioStore.swift in Sources */,
-				0C6F37272C89606A006F5E83 /* ErrorCard.swift in Sources */,
 				0C6F37132C892DF3006F5E83 /* HomeView.swift in Sources */,
+				0C6F372E2C8995DF006F5E83 /* UIView+Extensions.swift in Sources */,
 				0C6F36FE2C890F00006F5E83 /* MainView.swift in Sources */,
 				0C6F36B02C884E2B006F5E83 /* AppDelegate.swift in Sources */,
 				0C6F36EC2C88FF91006F5E83 /* CashItem.swift in Sources */,
-				0C6F37242C895BFD006F5E83 /* ErrorCardView.swift in Sources */,
 				0C6F36F42C8900DC006F5E83 /* Coordinator.swift in Sources */,
 				0C6F370C2C892746006F5E83 /* HomeViewController.swift in Sources */,
 				0C6F37152C893601006F5E83 /* HomeViewModel.swift in Sources */,

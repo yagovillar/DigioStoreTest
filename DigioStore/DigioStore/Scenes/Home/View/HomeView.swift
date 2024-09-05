@@ -8,19 +8,18 @@
 import Foundation
 import UIKit
 
-
 class HomeView: UIView {
     
     typealias Strings = HomeViewModel.Strings
     
-    // Create the scroll view
+    // MARK: - Subviews
+    
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         return scrollView
     }()
     
-    // Create the stack view
     private let stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -29,13 +28,9 @@ class HomeView: UIView {
         return stackView
     }()
     
-    private var headerLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 20, weight: .medium)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = Strings.headerText.rawValue
-        return label
-    }()
+    private let headerLabel = HomeView.createLabel(withText: Strings.headerText.rawValue)
+    private let cashLabel = HomeView.createLabel(withText: Strings.cashLabel.rawValue)
+    private let productsLabel = HomeView.createLabel(withText: Strings.productsLabel.rawValue)
     
     let spotlightCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -47,28 +42,12 @@ class HomeView: UIView {
         return collection
     }()
     
-    private var cashLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 20, weight: .medium)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = Strings.cashLabel.rawValue
-        return label
-    }()
-    
     var cashImageView: UIImageView = {
         let imgView = UIImageView()
         imgView.contentMode = .scaleAspectFill
         imgView.translatesAutoresizingMaskIntoConstraints = false
         imgView.clipsToBounds = true
         return imgView
-    }()
-    
-    private var productsLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 20, weight: .medium)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = Strings.productsLabel.rawValue
-        return label
     }()
     
     let productsCollectionView: UICollectionView = {
@@ -81,7 +60,8 @@ class HomeView: UIView {
         return collection
     }()
     
-    // Initializers
+    // MARK: - Initializers
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -92,15 +72,25 @@ class HomeView: UIView {
         setupView()
     }
     
+    // MARK: - Helper Method
+    
+    private static func createLabel(withText text: String) -> UILabel {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 20, weight: .medium)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = text
+        return label
+    }
 }
 
 extension HomeView: ViewCode {
+    
+    // MARK: - ViewCode Methods
+    
     func buildHierarchy() {
-        // Add subviews
         addSubview(scrollView)
         scrollView.addSubview(stackView)
         
-        // Set up stack view with arranged subviews
         stackView.addArrangedSubview(headerLabel)
         stackView.addArrangedSubview(spotlightCollectionView)
         stackView.addArrangedSubview(cashLabel)
@@ -116,23 +106,26 @@ extension HomeView: ViewCode {
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            // Constraints for scrollView
+            // scrollView constraints
             scrollView.topAnchor.constraint(equalTo: topAnchor),
             scrollView.bottomAnchor.constraint(equalTo: bottomAnchor),
             scrollView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             scrollView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             
-            // Constraints for stackView within scrollView
+            // stackView constraints
             stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor), // Ensure stackView width matches scrollView width
             
-            spotlightCollectionView.heightAnchor.constraint(equalToConstant: 200), // Defina uma altura adequada para a coleção
-            spotlightCollectionView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 6),
-            productsCollectionView.heightAnchor.constraint(equalToConstant: 150), // Defina uma altura adequada para a coleção
+            // spotlightCollectionView height
+            spotlightCollectionView.heightAnchor.constraint(equalToConstant: 200),
             
+            // productsCollectionView height
+            productsCollectionView.heightAnchor.constraint(equalToConstant: 150),
+            
+            // Fixed heights for labels and cashImageView
             headerLabel.heightAnchor.constraint(equalToConstant: 50),
             cashLabel.heightAnchor.constraint(equalToConstant: 50),
             cashImageView.heightAnchor.constraint(equalToConstant: 100),
@@ -141,6 +134,6 @@ extension HomeView: ViewCode {
     }
     
     func setupAdditionalConfiguration() {
-        // Additional configuration if needed
+        // Any additional configurations can go here
     }
 }

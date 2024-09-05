@@ -28,12 +28,15 @@ class DigioStoreCollectionViewCell: UICollectionViewCell {
 
     func configure(with urlString: String, isProduct: Bool = false) {
         imageView.loadImage(from: urlString)
+        
         if isProduct {
+            // Ajuste de tamanho centralizado para o caso de produto
+            NSLayoutConstraint.deactivate(imageView.constraints) // Remove as constraints anteriores
             NSLayoutConstraint.activate([
                 imageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
                 imageView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-                imageView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.5),
-                imageView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.5)
+                imageView.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.5),
+                imageView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.5)
             ])
         }
     }
@@ -45,6 +48,7 @@ extension DigioStoreCollectionViewCell: ViewCode {
     }
 
     func setupConstraints() {
+        // Constraints padrão (imagem ocupa todo o contentView)
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: contentView.topAnchor),
             imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
@@ -54,17 +58,16 @@ extension DigioStoreCollectionViewCell: ViewCode {
     }
 
     func setupStyles() {
-        // Add rounded corners and shadow
+        // Sombra e estilo dos cantos arredondados
         layer.backgroundColor = UIColor.clear.cgColor
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOffset = CGSize(width: 0, height: 1.0)
         layer.shadowOpacity = 0.2
         layer.shadowRadius = 4.0
 
-        // set the cornerRadius of the containerView's layer
+        // Cantos arredondados no contentView
         contentView.backgroundColor = .white
         contentView.layer.cornerRadius = 20
         contentView.layer.masksToBounds = true
-
     }
 }

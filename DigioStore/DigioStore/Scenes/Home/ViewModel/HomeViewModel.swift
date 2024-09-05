@@ -11,29 +11,33 @@ protocol HomeViewModelDelegate: AnyObject {
     func didGetProducts()
     func didFail(error: String)
 }
+
 protocol HomeViewModelProtocol {
     func getProducts()
-    var products: DigioStore? { get } // Propriedade somente leitura
+    var products: DigioStore? { get }
 }
 
 class HomeViewModel: HomeViewModelProtocol {
     
-    var networkManager: NetworkManager
-    var delegate: HomeViewModelDelegate?
-    var products: DigioStore? // Acesso somente leitura
+    private let networkManager: NetworkManager
+    weak var delegate: HomeViewModelDelegate?
+    private(set) var products: DigioStore? // Propriedade somente leitura
     
+    // MARK: - Initializer
     init(networkManager: NetworkManager) {
         self.networkManager = networkManager
     }
     
+    // MARK: - Public Methods
     func getProducts() {
-        networkManager.fetchDigioStoreData { result in
+        networkManager.fetchDigioStoreData { [weak self] result in
+            guard let self = self else { return }
             switch result {
-            case .success(let success):
-                self.products = success
+            case .success(let digioStore):
+                self.products = digioStore
                 self.delegate?.didGetProducts()
-            case .failure(let failure):
-                self.delegate?.didFail(error: "Falha ao carregar os produtos")
+            case .failure(let error):
+                self.delegate?.didFail(error: "Falha ao carregar os produtos: \(error.localizedDescription)")
             }
         }
     }
