@@ -84,4 +84,10 @@ extension DetailsView: ViewCode {
     func setupStyles() {
         backgroundColor = .white
     }
+    
+    func setupAdditionalConfiguration() {
+        productImg.accessibilityIdentifier = "ProductImageView"
+        productTitle.accessibilityIdentifier = "ProductTitleLabel"
+        productDescription.accessibilityIdentifier = "ProductDescriptionLabel"
+    }
 }

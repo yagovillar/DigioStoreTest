@@ -137,6 +137,10 @@ extension HomeView: ViewCode {
     }
     
     func setupAdditionalConfiguration() {
-        // Any additional configurations can go here
+        headerLabel.accessibilityIdentifier = "Header"
+        spotlightCollectionView.accessibilityIdentifier = "SpotlightCollectionView"
+        cashLabel.accessibilityIdentifier = "CashLabel"
+        cashImageView.accessibilityIdentifier = "CashImageView"
+        productsCollectionView.accessibilityIdentifier = "ProductsCollectionView"
     }
 }

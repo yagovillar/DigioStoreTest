@@ -43,6 +43,8 @@
 		0C6F374E2C8AA4BE006F5E83 /* HomeVIewModelDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F374D2C8AA4BE006F5E83 /* HomeVIewModelDelegateMock.swift */; };
 		0C6F37502C8AA4E2006F5E83 /* DetailsViewModelDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F374F2C8AA4E2006F5E83 /* DetailsViewModelDelegateMock.swift */; };
 		0C6F37522C8AA4FB006F5E83 /* HomeVIewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F37512C8AA4FB006F5E83 /* HomeVIewModelTests.swift */; };
+		0C6F37542C8B68BB006F5E83 /* HomeViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F37532C8B68BB006F5E83 /* HomeViewUITests.swift */; };
+		0C6F37562C8B696B006F5E83 /* DetailsViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F37552C8B696B006F5E83 /* DetailsViewUITests.swift */; };
 		211355B8F527FEC7276640C2 /* Pods_DigioStore_DigioStoreUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00301AB4900144FB935AA9C2 /* Pods_DigioStore_DigioStoreUITests.framework */; };
 		B6CC14514C7EFBD69448C4FF /* Pods_DigioStoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9647F5B2E4836E7819031FF /* Pods_DigioStoreTests.framework */; };
 		BDD2AA29F7C7D67E224CC23C /* Pods_DigioStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32C3C31D97DD70EF1013DD71 /* Pods_DigioStore.framework */; };
@@ -106,6 +108,8 @@
 		0C6F374D2C8AA4BE006F5E83 /* HomeVIewModelDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVIewModelDelegateMock.swift; sourceTree = "<group>"; };
 		0C6F374F2C8AA4E2006F5E83 /* DetailsViewModelDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModelDelegateMock.swift; sourceTree = "<group>"; };
 		0C6F37512C8AA4FB006F5E83 /* HomeVIewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVIewModelTests.swift; sourceTree = "<group>"; };
+		0C6F37532C8B68BB006F5E83 /* HomeViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewUITests.swift; sourceTree = "<group>"; };
+		0C6F37552C8B696B006F5E83 /* DetailsViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewUITests.swift; sourceTree = "<group>"; };
 		32C3C31D97DD70EF1013DD71 /* Pods_DigioStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigioStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44C039F3F4CA2ADA3F309CC1 /* Pods-DigioStoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigioStoreTests.debug.xcconfig"; path = "Target Support Files/Pods-DigioStoreTests/Pods-DigioStoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8D8BDEB0A57CC8B4EBF260C2 /* Pods-DigioStore-DigioStoreUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigioStore-DigioStoreUITests.release.xcconfig"; path = "Target Support Files/Pods-DigioStore-DigioStoreUITests/Pods-DigioStore-DigioStoreUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -191,6 +195,8 @@
 			children = (
 				0C6F36D02C884E2C006F5E83 /* DigioStoreUITests.swift */,
 				0C6F36D22C884E2C006F5E83 /* DigioStoreUITestsLaunchTests.swift */,
+				0C6F37532C8B68BB006F5E83 /* HomeViewUITests.swift */,
+				0C6F37552C8B696B006F5E83 /* DetailsViewUITests.swift */,
 			);
 			path = DigioStoreUITests;
 			sourceTree = "<group>";
@@ -721,6 +727,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C6F37542C8B68BB006F5E83 /* HomeViewUITests.swift in Sources */,
+				0C6F37562C8B696B006F5E83 /* DetailsViewUITests.swift in Sources */,
 				0C6F36D12C884E2C006F5E83 /* DigioStoreUITests.swift in Sources */,
 				0C6F36D32C884E2C006F5E83 /* DigioStoreUITestsLaunchTests.swift in Sources */,
 			);
