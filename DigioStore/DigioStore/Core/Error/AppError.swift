@@ -45,5 +45,23 @@ enum AppError: Error {
             return "Custom error: \(message)"
         }
     }
+    
 }
 
+extension AppError: Equatable {
+    static func == (lhs: AppError, rhs: AppError) -> Bool {
+        switch (lhs, rhs) {
+        case (.networkError(let lhsError), .networkError(let rhsError)):
+            return lhsError.localizedDescription == rhsError.localizedDescription
+        case (.decodingError(let lhsError), .decodingError(let rhsError)):
+            return lhsError.localizedDescription == rhsError.localizedDescription
+        case (.invalidURL, .invalidURL),
+             (.noData, .noData):
+            return true
+        case (.custom(let lhsMessage), .custom(let rhsMessage)):
+            return lhsMessage == rhsMessage
+        default:
+            return false
+        }
+    }
+}

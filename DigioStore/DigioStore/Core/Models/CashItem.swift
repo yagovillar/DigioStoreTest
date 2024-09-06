@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CashItem: Codable {
+struct CashItem: Codable, Equatable {
     let title: String
     let bannerURL: String
     let description: String

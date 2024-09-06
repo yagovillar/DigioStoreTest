@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct Product: Codable {
+struct Product: Codable, Equatable {
     let name: String
     let imageURL: String
     let description: String
     
     enum CodingKeys: String, CodingKey {
         case name
-        case imageURL = "imageURL"
+        case imageURL
         case description
     }
 }

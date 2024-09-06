@@ -15,13 +15,13 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 ## iOS
 
-### ios screenshots
+### ios tests
 
 ```sh
-[bundle exec] fastlane ios screenshots
+[bundle exec] fastlane ios tests
 ```
 
-Generate new localized screenshots
+
 
 ----
 

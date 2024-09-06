@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DigioStore: Codable {
+struct DigioStore: Codable, Equatable {
     let spotlight: [SpotlightItem]
     let products: [Product]
     let cash: CashItem

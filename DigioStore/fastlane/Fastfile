@@ -16,12 +16,9 @@
 default_platform(:ios)
 
 platform :ios do
-  desc "Generate new localized screenshots"
-  lane :screenshots do
-    capture_screenshots(
-      workspace: "DigioStore.xcworkspace",
-      scheme: "DigioStore",
-      languages: ["pt-BR"] # Adiciona a localidade para português do Brasil
-    )
-  end
+	lane :tests do
+  		scan(workspace: "DigioStore.xcworkspace",
+            		devices: ["iPhone 15"],
+            		scheme: "DigioStore")
+	end
 end

@@ -38,6 +38,11 @@
 		0C6F37402C8A8598006F5E83 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F373F2C8A8598006F5E83 /* AppError.swift */; };
 		0C6F37422C8A8625006F5E83 /* ErrorCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F37412C8A8625006F5E83 /* ErrorCard.swift */; };
 		0C6F37442C8A880C006F5E83 /* ErroLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F37432C8A880C006F5E83 /* ErroLogger.swift */; };
+		0C6F37492C8A9D37006F5E83 /* DetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F37482C8A9D37006F5E83 /* DetailsViewModelTests.swift */; };
+		0C6F374C2C8A9D5D006F5E83 /* NetworkManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F374B2C8A9D5D006F5E83 /* NetworkManagerMock.swift */; };
+		0C6F374E2C8AA4BE006F5E83 /* HomeVIewModelDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F374D2C8AA4BE006F5E83 /* HomeVIewModelDelegateMock.swift */; };
+		0C6F37502C8AA4E2006F5E83 /* DetailsViewModelDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F374F2C8AA4E2006F5E83 /* DetailsViewModelDelegateMock.swift */; };
+		0C6F37522C8AA4FB006F5E83 /* HomeVIewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6F37512C8AA4FB006F5E83 /* HomeVIewModelTests.swift */; };
 		211355B8F527FEC7276640C2 /* Pods_DigioStore_DigioStoreUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00301AB4900144FB935AA9C2 /* Pods_DigioStore_DigioStoreUITests.framework */; };
 		B6CC14514C7EFBD69448C4FF /* Pods_DigioStoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9647F5B2E4836E7819031FF /* Pods_DigioStoreTests.framework */; };
 		BDD2AA29F7C7D67E224CC23C /* Pods_DigioStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32C3C31D97DD70EF1013DD71 /* Pods_DigioStore.framework */; };
@@ -96,6 +101,11 @@
 		0C6F373F2C8A8598006F5E83 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		0C6F37412C8A8625006F5E83 /* ErrorCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCard.swift; sourceTree = "<group>"; };
 		0C6F37432C8A880C006F5E83 /* ErroLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErroLogger.swift; sourceTree = "<group>"; };
+		0C6F37482C8A9D37006F5E83 /* DetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModelTests.swift; sourceTree = "<group>"; };
+		0C6F374B2C8A9D5D006F5E83 /* NetworkManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerMock.swift; sourceTree = "<group>"; };
+		0C6F374D2C8AA4BE006F5E83 /* HomeVIewModelDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVIewModelDelegateMock.swift; sourceTree = "<group>"; };
+		0C6F374F2C8AA4E2006F5E83 /* DetailsViewModelDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModelDelegateMock.swift; sourceTree = "<group>"; };
+		0C6F37512C8AA4FB006F5E83 /* HomeVIewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVIewModelTests.swift; sourceTree = "<group>"; };
 		32C3C31D97DD70EF1013DD71 /* Pods_DigioStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigioStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44C039F3F4CA2ADA3F309CC1 /* Pods-DigioStoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigioStoreTests.debug.xcconfig"; path = "Target Support Files/Pods-DigioStoreTests/Pods-DigioStoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8D8BDEB0A57CC8B4EBF260C2 /* Pods-DigioStore-DigioStoreUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigioStore-DigioStoreUITests.release.xcconfig"; path = "Target Support Files/Pods-DigioStore-DigioStoreUITests/Pods-DigioStore-DigioStoreUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -169,6 +179,8 @@
 		0C6F36C52C884E2C006F5E83 /* DigioStoreTests */ = {
 			isa = PBXGroup;
 			children = (
+				0C6F374A2C8A9D4F006F5E83 /* Mocks */,
+				0C6F37452C8A9D12006F5E83 /* Scenes */,
 				0C6F36C62C884E2C006F5E83 /* DigioStoreTests.swift */,
 			);
 			path = DigioStoreTests;
@@ -382,6 +394,41 @@
 				0C6F37432C8A880C006F5E83 /* ErroLogger.swift */,
 			);
 			path = Error;
+			sourceTree = "<group>";
+		};
+		0C6F37452C8A9D12006F5E83 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				0C6F37472C8A9D28006F5E83 /* Details */,
+				0C6F37462C8A9D17006F5E83 /* Home */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		0C6F37462C8A9D17006F5E83 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0C6F37512C8AA4FB006F5E83 /* HomeVIewModelTests.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		0C6F37472C8A9D28006F5E83 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				0C6F37482C8A9D37006F5E83 /* DetailsViewModelTests.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		0C6F374A2C8A9D4F006F5E83 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				0C6F374B2C8A9D5D006F5E83 /* NetworkManagerMock.swift */,
+				0C6F374D2C8AA4BE006F5E83 /* HomeVIewModelDelegateMock.swift */,
+				0C6F374F2C8AA4E2006F5E83 /* DetailsViewModelDelegateMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		52E80966F0BD69D209F81C8B /* Frameworks */ = {
@@ -661,7 +708,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C6F374E2C8AA4BE006F5E83 /* HomeVIewModelDelegateMock.swift in Sources */,
+				0C6F37522C8AA4FB006F5E83 /* HomeVIewModelTests.swift in Sources */,
 				0C6F36C72C884E2C006F5E83 /* DigioStoreTests.swift in Sources */,
+				0C6F37502C8AA4E2006F5E83 /* DetailsViewModelDelegateMock.swift in Sources */,
+				0C6F37492C8A9D37006F5E83 /* DetailsViewModelTests.swift in Sources */,
+				0C6F374C2C8A9D5D006F5E83 /* NetworkManagerMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -874,7 +926,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = yagovanzan.DigioStoreTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -894,7 +946,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = yagovanzan.DigioStoreTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -35,6 +35,8 @@ class DetailsViewModel: DetailsViewModelProtocol {
             case .success(let success):
                 if let product = success.products.first(where: {$0.name == self.productName}) {
                     self.delegate?.viewModel(self, didFetchProduct: product)
+                } else {
+                    self.delegate?.viewModel(self, didFailWithError: AppError.noData)
                 }
             case .failure(let failure):
                 self.delegate?.viewModel(self, didFailWithError: failure)
