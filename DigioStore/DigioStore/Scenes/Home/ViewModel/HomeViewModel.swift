@@ -9,7 +9,7 @@ import Foundation
 
 protocol HomeViewModelDelegate: AnyObject {
     func viewModel(_ viewModel: HomeViewModelProtocol, didFetchProducts products: DigioStore)
-    func viewModel(_ viewModel: HomeViewModelProtocol, didFailWithError error: Error)
+    func viewModel(_ viewModel: HomeViewModelProtocol, didFailWithError error: AppError)
 }
 
 protocol HomeViewModelProtocol {

@@ -14,7 +14,7 @@ protocol DetailsViewModelProtocol {
 
 protocol DetailsViewModelDelegate: AnyObject {
     func viewModel(_ viewModel: DetailsViewModel, didFetchProduct product: Product)
-    func viewModel(_ viewModel: DetailsViewModel, didFailWithError error: Error)
+    func viewModel(_ viewModel: DetailsViewModel, didFailWithError error: AppError)
 }
 
 class DetailsViewModel: DetailsViewModelProtocol {

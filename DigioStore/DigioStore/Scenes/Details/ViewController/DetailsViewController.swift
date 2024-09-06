@@ -41,7 +41,7 @@ extension DetailsViewController: DetailsViewModelDelegate {
         LoadingView.hide()
     }
     
-    func viewModel(_ viewModel: DetailsViewModel, didFailWithError error: any Error) {
-        self.showErrorToast(errorMessage: error.localizedDescription)
+    func viewModel(_ viewModel: DetailsViewModel, didFailWithError error: AppError) {
+        ErrorCard.show(message: error.userFriendlyMessage(), on: self)
     }
 }

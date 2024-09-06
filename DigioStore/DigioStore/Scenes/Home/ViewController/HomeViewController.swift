@@ -63,8 +63,8 @@ extension HomeViewController: HomeViewModelDelegate {
         LoadingView.hide()
     }
     
-    func viewModel(_ viewModel: any HomeViewModelProtocol, didFailWithError error: any Error) {
-        showErrorToast(errorMessage: error.localizedDescription)
+    func viewModel(_ viewModel: any HomeViewModelProtocol, didFailWithError error: AppError) {
+        ErrorCard.show(message: error.userFriendlyMessage(), on: self)
     }
 }
 
