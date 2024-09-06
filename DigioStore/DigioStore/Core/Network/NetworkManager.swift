@@ -7,7 +7,11 @@
 
 import Foundation
 
-class NetworkManager {
+protocol NetworkManagerProtocol {
+    func fetchDigioStoreData(completion: @escaping (Result<DigioStore, Error>) -> Void)
+}
+
+class NetworkManager: NetworkManagerProtocol {
     
     static let shared = NetworkManager()
     

@@ -8,23 +8,26 @@
 import Foundation
 
 protocol HomeViewModelDelegate: AnyObject {
-    func didGetProducts()
-    func didFail(error: String)
+    func viewModel(_ viewModel: HomeViewModelProtocol, didFetchProducts products: DigioStore)
+    func viewModel(_ viewModel: HomeViewModelProtocol, didFailWithError error: Error)
 }
 
 protocol HomeViewModelProtocol {
     func getProducts()
+    func goToDetail(productName: String)
     var products: DigioStore? { get }
+    var delegate: HomeViewModelDelegate? { get set }
 }
 
 class HomeViewModel: HomeViewModelProtocol {
     
-    private let networkManager: NetworkManager
+    private let networkManager: NetworkManagerProtocol
     weak var delegate: HomeViewModelDelegate?
+    var coordinatorDelegate: HomeCoordinatorFlow?
     private(set) var products: DigioStore? // Propriedade somente leitura
     
     // MARK: - Initializer
-    init(networkManager: NetworkManager) {
+    init(networkManager: NetworkManagerProtocol) {
         self.networkManager = networkManager
     }
     
@@ -35,10 +38,14 @@ class HomeViewModel: HomeViewModelProtocol {
             switch result {
             case .success(let digioStore):
                 self.products = digioStore
-                self.delegate?.didGetProducts()
+                self.delegate?.viewModel(self, didFetchProducts: digioStore)
             case .failure(let error):
-                self.delegate?.didFail(error: "Falha ao carregar os produtos: \(error.localizedDescription)")
+                self.delegate?.viewModel(self, didFailWithError: error)
             }
         }
+    }
+    
+    func goToDetail(productName: String) {
+        self.coordinatorDelegate?.goToDetails(productName: productName)
     }
 }

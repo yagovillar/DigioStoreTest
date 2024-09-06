@@ -39,6 +39,7 @@ class HomeView: UIView {
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.showsHorizontalScrollIndicator = false
+        collection.backgroundColor = .white
         return collection
     }()
     
@@ -57,6 +58,7 @@ class HomeView: UIView {
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.showsHorizontalScrollIndicator = false
+        collection.backgroundColor = .white
         return collection
     }()
     
@@ -79,6 +81,7 @@ class HomeView: UIView {
         label.font = .systemFont(ofSize: 20, weight: .medium)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = text
+        label.textColor = .black
         return label
     }
 }

@@ -26,8 +26,9 @@ class HomeViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        showErrorToast(errorMessage: "error")
+        LoadingView.show()
         setupView()
+        viewModel.delegate = self
         viewModel.getProducts()
     }
     
@@ -51,7 +52,7 @@ class HomeViewController: UIViewController {
 
 // MARK: - HomeViewModelDelegate
 extension HomeViewController: HomeViewModelDelegate {
-    func didGetProducts() {
+    func viewModel(_ viewModel: any HomeViewModelProtocol, didFetchProducts products: DigioStore) {
         DispatchQueue.main.async {
             self.customView.productsCollectionView.reloadData()
             self.customView.spotlightCollectionView.reloadData()
@@ -59,10 +60,11 @@ extension HomeViewController: HomeViewModelDelegate {
                 self.customView.cashImageView.loadImage(from: bannerURL)
             }
         }
+        LoadingView.hide()
     }
     
-    func didFail(error: String) {
-        showErrorToast(errorMessage: error)
+    func viewModel(_ viewModel: any HomeViewModelProtocol, didFailWithError error: any Error) {
+        showErrorToast(errorMessage: error.localizedDescription)
     }
 }
 
@@ -108,4 +110,16 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 20
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let product = viewModel.products?.products[indexPath.row] else { return }
+
+        switch collectionView {
+        case customView.productsCollectionView:
+            viewModel.goToDetail(productName: product.name)
+        default:
+            break
+        }
+    }
+
 }

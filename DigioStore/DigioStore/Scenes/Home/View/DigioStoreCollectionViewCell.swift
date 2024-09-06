@@ -27,17 +27,19 @@ class DigioStoreCollectionViewCell: UICollectionViewCell {
     }
 
     func configure(with urlString: String, isProduct: Bool = false) {
-        imageView.loadImage(from: urlString)
-        
-        if isProduct {
-            // Ajuste de tamanho centralizado para o caso de produto
-            NSLayoutConstraint.deactivate(imageView.constraints) // Remove as constraints anteriores
-            NSLayoutConstraint.activate([
-                imageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-                imageView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-                imageView.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.5),
-                imageView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.5)
-            ])
+        DispatchQueue.main.async { [self] in
+            imageView.loadImage(from: urlString)
+            
+            if isProduct {
+                // Ajuste de tamanho centralizado para o caso de produto
+                NSLayoutConstraint.deactivate(imageView.constraints) // Remove as constraints anteriores
+                NSLayoutConstraint.activate([
+                    imageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+                    imageView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+                    imageView.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.5),
+                    imageView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.5)
+                ])
+            }
         }
     }
 }

@@ -16,4 +16,12 @@ extension UINavigationController {
         // Push the view controller as usual
         self.pushViewController(viewController, animated: animated)
     }
+    
+    func pushWithoutBackTitle(_ viewController: UIViewController, animated: Bool) {
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        self.topViewController?.navigationItem.backBarButtonItem = backItem
+
+        self.pushViewController(viewController, animated: animated)
+    }
 }
